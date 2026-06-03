@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuneSurfer — Desert Mysticism Meets Cosmic Frequencies</title>
+    <meta name="description" content="DuneSurfer — Progressive Psytrance DJ & Producer. Desert mysticism meets cosmic frequencies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --sand: #e8dcc8;
+            --sand-warm: #d9c9a8;
+            --cream: #f5f0e8;
+            --bone: #ece6d8;
+            --ink: #1a1714;
+            --ink-soft: #2e2a24;
+            --ink-dim: #6b6358;
+            --ink-faint: #9e9485;
+            --copper: #b8733a;
+            --copper-dark: #8f5a2c;
+            --dune-shadow: rgba(26,23,20,0.06);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- Textured background --- */
+        .bg-texture {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(184,115,58,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(184,115,58,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 10% 80%, rgba(184,115,58,0.03) 0%, transparent 40%);
+        }
+
+        /* --- Grain overlay --- */
+        .grain {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.3;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        /* --- Container --- */
+        .container {
+            position: relative; z-index: 1;
+            max-width: 720px; margin: 0 auto; padding: 0 28px;
+            min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+
+        /* --- Hero --- */
+        .hero {
+            text-align: center; padding: 80px 0 0;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 10vw, 6rem);
+            letter-spacing: 0.06em;
+            color: var(--ink);
+            line-height: 1;
+            position: relative;
+        }
+        .logo-text::after {
+            content: '';
+            display: block;
+            width: 40px; height: 3px;
+            background: var(--copper);
+            margin: 28px auto 0;
+        }
+
+        .tagline {
+            font-weight: 300;
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-dim);
+            margin-top: 24px;
+        }
+
+        .bio {
+            max-width: 480px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--ink-faint);
+            margin: 32px auto 0;
+            text-align: center;
+        }
+
+        /* --- Sections --- */
+        .section {
+            width: 100%;
+            margin-top: 56px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .section-label {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 400;
+            font-size: 0.6rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* --- Music links --- */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .music-link {
+            display: flex; align-items: center; justify-content: center;
+            padding: 16px 24px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--ink-soft);
+            border: 1px solid var(--sand-warm);
+            border-radius: 2px;
+            background: rgba(255,255,255,0.5);
+            transition: all 0.35s ease;
+        }
+        .music-link:hover {
+            border-color: var(--copper);
+            color: var(--copper-dark);
+            background: rgba(184,115,58,0.05);
+            box-shadow: 0 4px 20px rgba(184,115,58,0.08);
+        }
+
+        /* --- Connect / Social --- */
+        .connect-row {
+            display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+        }
+        .connect-link {
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            color: var(--ink-dim);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .connect-link::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0; right: 0;
+            height: 1px;
+            background: var(--copper);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+        .connect-link:hover { color: var(--copper-dark); }
+        .connect-link:hover::after { transform: scaleX(1); }
+
+        /* --- Now Playing / Latest --- */
+        .latest {
+            width: 100%;
+            margin-top: 56px;
+            padding: 28px 32px;
+            border: 1px solid var(--sand-warm);
+            border-radius: 2px;
+            background: rgba(255,255,255,0.4);
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        .latest-label {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 400;
+            font-size: 0.55rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 10px;
+        }
+        .latest-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 0.08em;
+            color: var(--ink);
+        }
+        .latest-sub {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--ink-faint);
+            margin-top: 4px;
+            letter-spacing: 0.06em;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 48px 0 40px;
+            margin-top: 56px;
+            border-top: 1px solid var(--sand-warm);
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+        .footer p {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--ink-faint);
+        }
+        .footer .prod {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 400;
+            font-size: 0.55rem;
+            letter-spacing: 0.35em;
+            color: var(--sand-warm);
+            margin-top: 8px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 500px) {
+            .music-grid { grid-template-columns: 1fr; }
+            .connect-row { gap: 20px; }
+            .latest { padding: 22px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-texture"></div>
+    <div class="grain"></div>
+
+    <div class="container">
+        <section class="hero">
+            <p class="eyebrow">Progressive Psytrance</p>
+            <h1 class="logo-text">DUNESURFER</h1>
+            <p class="tagline">Desert Mysticism Meets Cosmic Frequencies</p>
+            <p class="bio">Riding frequencies where ancient desert winds meet the pulse of the cosmos. Progressive psytrance built on hypnotic layers, emotional architecture, and relentless groove.</p>
+        </section>
+
+        <div class="latest">
+            <p class="latest-label">Latest Release</p>
+            <p class="latest-title">COMING SOON</p>
+            <p class="latest-sub">New music dropping — stay locked in</p>
+        </div>
+
+        <div class="section">
+            <p class="section-label">Listen</p>
+            <div class="music-grid">
+                <a href="#" class="music-link">Spotify</a>
+                <a href="#" class="music-link">Apple Music</a>
+                <a href="#" class="music-link">YouTube</a>
+                <a href="#" class="music-link">SoundCloud</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="section-label">Connect</p>
+            <div class="connect-row">
+                <a href="https://x.com/dunesurfer" class="connect-link">X</a>
+                <a href="#" class="connect-link">Instagram</a>
+                <a href="#" class="connect-link">TikTok</a>
+                <a href="mailto:info@dunesurfer.com" class="connect-link">Contact</a>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 DUNESURFER</p>
+            <p class="prod">DuneSurfer Productions</p>
+        </footer>
+    </div>
+</body>
+</html>
