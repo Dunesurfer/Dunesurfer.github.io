@@ -1,306 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18210381462"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18210381462');
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuneSurfer — Desert Mysticism Meets Cosmic Frequencies</title>
-    <meta name="description" content="DuneSurfer — Progressive Psytrance DJ & Producer. Desert mysticism meets cosmic frequencies.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuneSurfer | Surfing Desert Mysticism Meeting Cosmic Frequencies</title>
+  <meta name="description" content="DuneSurfer. Psytrance born from desert mysticism and cosmic frequencies. Hypnotic bass, tribal rhythms and psychedelic soundscapes.">
 
-        :root {
-            --sand: #e8dcc8;
-            --sand-warm: #d9c9a8;
-            --cream: #f5f0e8;
-            --bone: #ece6d8;
-            --ink: #1a1714;
-            --ink-soft: #2e2a24;
-            --ink-dim: #6b6358;
-            --ink-faint: #9e9485;
-            --copper: #b8733a;
-            --copper-dark: #8f5a2c;
-            --dune-shadow: rgba(26,23,20,0.06);
-        }
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DuneSurfer | Desert Psytrance">
+  <meta property="og:description" content="Surfing desert mysticism meeting cosmic frequencies. Psytrance built for the dancefloor and the cosmos.">
+  <meta property="og:image" content="./assets/images/og-image.jpg">
 
-        html { scroll-behavior: smooth; }
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/style.css">
 
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background: var(--cream);
-            color: var(--ink);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* --- Textured background --- */
-        .bg-texture {
-            position: fixed; inset: 0; z-index: 0; pointer-events: none;
-            background:
-                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(184,115,58,0.06) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(184,115,58,0.04) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 30% at 10% 80%, rgba(184,115,58,0.03) 0%, transparent 40%);
-        }
-
-        /* --- Grain overlay --- */
-        .grain {
-            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.3;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-        }
-
-        /* --- Container --- */
-        .container {
-            position: relative; z-index: 1;
-            max-width: 720px; margin: 0 auto; padding: 0 28px;
-            min-height: 100vh;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-        }
-
-        /* --- Hero --- */
-        .hero {
-            text-align: center; padding: 80px 0 0;
-            animation: fadeIn 1s ease-out;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .eyebrow {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 500;
-            font-size: 0.65rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--copper);
-            margin-bottom: 20px;
-        }
-
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3rem, 10vw, 6rem);
-            letter-spacing: 0.06em;
-            color: var(--ink);
-            line-height: 1;
-            position: relative;
-        }
-        .logo-text::after {
-            content: '';
-            display: block;
-            width: 40px; height: 3px;
-            background: var(--copper);
-            margin: 28px auto 0;
-        }
-
-        .tagline {
-            font-weight: 300;
-            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--ink-dim);
-            margin-top: 24px;
-        }
-
-        .bio {
-            max-width: 480px;
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--ink-faint);
-            margin: 32px auto 0;
-            text-align: center;
-        }
-
-        /* --- Sections --- */
-        .section {
-            width: 100%;
-            margin-top: 56px;
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-
-        .section-label {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 400;
-            font-size: 0.6rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--ink-faint);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* --- Music links --- */
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-        .music-link {
-            display: flex; align-items: center; justify-content: center;
-            padding: 16px 24px;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--ink-soft);
-            border: 1px solid var(--sand-warm);
-            border-radius: 2px;
-            background: rgba(255,255,255,0.5);
-            transition: all 0.35s ease;
-        }
-        .music-link:hover {
-            border-color: var(--copper);
-            color: var(--copper-dark);
-            background: rgba(184,115,58,0.05);
-            box-shadow: 0 4px 20px rgba(184,115,58,0.08);
-        }
-
-        /* --- Connect / Social --- */
-        .connect-row {
-            display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
-        }
-        .connect-link {
-            font-weight: 500;
-            font-size: 0.85rem;
-            letter-spacing: 0.12em;
-            text-decoration: none;
-            color: var(--ink-dim);
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .connect-link::after {
-            content: '';
-            position: absolute; bottom: -3px; left: 0; right: 0;
-            height: 1px;
-            background: var(--copper);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
-        }
-        .connect-link:hover { color: var(--copper-dark); }
-        .connect-link:hover::after { transform: scaleX(1); }
-
-        /* --- Now Playing / Latest --- */
-        .latest {
-            width: 100%;
-            margin-top: 56px;
-            padding: 28px 32px;
-            border: 1px solid var(--sand-warm);
-            border-radius: 2px;
-            background: rgba(255,255,255,0.4);
-            text-align: center;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-        .latest-label {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 400;
-            font-size: 0.55rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--copper);
-            margin-bottom: 10px;
-        }
-        .latest-title {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1.15rem;
-            letter-spacing: 0.08em;
-            color: var(--ink);
-        }
-        .latest-sub {
-            font-weight: 400;
-            font-size: 0.8rem;
-            color: var(--ink-faint);
-            margin-top: 4px;
-            letter-spacing: 0.06em;
-        }
-
-        /* --- Footer --- */
-        .footer {
-            width: 100%;
-            text-align: center;
-            padding: 48px 0 40px;
-            margin-top: 56px;
-            border-top: 1px solid var(--sand-warm);
-            animation: fadeIn 1s ease-out 0.7s both;
-        }
-        .footer p {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            color: var(--ink-faint);
-        }
-        .footer .prod {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 400;
-            font-size: 0.55rem;
-            letter-spacing: 0.35em;
-            color: var(--sand-warm);
-            margin-top: 8px;
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 500px) {
-            .music-grid { grid-template-columns: 1fr; }
-            .connect-row { gap: 20px; }
-            .latest { padding: 22px 20px; }
-        }
-    </style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
 </head>
 <body>
-    <div class="bg-texture"></div>
-    <div class="grain"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <section class="hero">
-            <p class="eyebrow">Progressive Psytrance</p>
-            <h1 class="logo-text">DUNESURFER</h1>
-            <p class="tagline">Desert Mysticism Meets Cosmic Frequencies</p>
-            <p class="bio">Riding frequencies where ancient desert winds meet the pulse of the cosmos. Progressive psytrance built on hypnotic layers, emotional architecture, and relentless groove.</p>
-        </section>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/dunesurfer-mark.png" alt="DuneSurfer cosmic mandala mark">
+        DuneSurfer
+      </a>
 
-        <div class="latest">
-            <p class="latest-label">Latest Release</p>
-            <p class="latest-title">COMING SOON</p>
-            <p class="latest-sub">New music dropping — stay locked in</p>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="./music.html">Music</a>
+        <a class="nav-link" href="./contact.html">Contact</a>
+        <a class="nav-link" href="./epk.html">EPK</a>
+        <div class="nav-socials">
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="DuneSurfer on Spotify">
+            <img src="./assets/icons/spotify.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="DuneSurfer on Instagram">
+            <img src="./assets/icons/instagram.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="DuneSurfer on YouTube">
+            <img src="./assets/icons/youtube.svg" alt="" aria-hidden="true">
+          </a>
+          <a class="icon-link" href="#" target="_blank" rel="noopener" aria-label="DuneSurfer on SoundCloud">
+            <img src="./assets/icons/soundcloud.svg" alt="" aria-hidden="true">
+          </a>
         </div>
-
-        <div class="section">
-            <p class="section-label">Listen</p>
-            <div class="music-grid">
-                <a href="#" class="music-link">Spotify</a>
-                <a href="#" class="music-link">Apple Music</a>
-                <a href="#" class="music-link">YouTube</a>
-                <a href="#" class="music-link">SoundCloud</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <p class="section-label">Connect</p>
-            <div class="connect-row">
-                <a href="https://x.com/dunesurfer" class="connect-link">X</a>
-                <a href="#" class="connect-link">Instagram</a>
-                <a href="#" class="connect-link">TikTok</a>
-                <a href="mailto:info@dunesurfer.com" class="connect-link">Contact</a>
-            </div>
-        </div>
-
-        <footer class="footer">
-            <p>&copy; 2025 DUNESURFER</p>
-            <p class="prod">DuneSurfer Productions</p>
-        </footer>
+        <a class="btn btn-primary btn-small" href="./music.html">Listen</a>
+      </nav>
     </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="DuneSurfer introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>The Frequency Gate</span>
+          <h1 class="hero-title">DuneSurfer</h1>
+          <div class="hero-tagline-wrap">
+            <div class="tagline-col">
+              <p class="hero-tagline">Desert Mysticism</p>
+              <p class="hero-subtitle"><em>Ancient Frequencies</em></p>
+            </div>
+            <span class="tagline-dash" aria-hidden="true">|</span>
+            <div class="tagline-col">
+              <p class="hero-tagline">Cosmic Psytrance</p>
+              <p class="hero-subtitle"><em>Future Rhythms</em></p>
+            </div>
+          </div>
+          <p class="hero-sub">Psychedelic sound shaped by desert winds, cosmic frequencies, hypnotic bass and tribal rhythms that dissolve the boundary between earth and stars.</p>
+
+          <div class="hero-actions">
+            <button id="enter-sound" class="btn btn-primary" type="button">Enter The Vortex</button>
+            <span class="sound-status" role="status"><span class="pulse-dot" aria-hidden="true"></span>Frequencies Active</span>
+            <a class="btn btn-secondary" href="./music.html">Explore The Sound</a>
+          </div>
+          <p id="sound-live" class="visually-hidden" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="portal-stage">
+          <div id="sound-portal" aria-hidden="true"></div>
+          <div class="portal-fallback">
+            <img class="fallback-mark" src="./assets/images/dunesurfer-mark.png" alt="Glowing cosmic DuneSurfer mandala">
+          </div>
+        </div>
+      </div>
+
+      <span class="scroll-cue" aria-hidden="true">Scroll</span>
+    </section>
+
+    <section id="the-sound" aria-labelledby="sound-heading">
+      <div class="container">
+        <span class="section-kicker reveal">Listen closer</span>
+        <h2 id="sound-heading" class="section-title reveal">The Frequencies</h2>
+        <p class="section-lead reveal">DuneSurfer creates psytrance that channels desert mysticism through cosmic sound design. Hypnotic, driving, transcendent.</p>
+
+        <div class="capsule-grid">
+          <article class="capsule glass-card tilt reveal" data-audio-scope>
+            <h3>Kick</h3>
+            <p>Punching low-end, clean and relentless. The heartbeat of the desert.</p>
+            <div class="capsule-controls">
+              <button class="play-btn" type="button" data-gated aria-disabled="true"
+                      data-audio-id="capsule-kick" data-audio-src="./assets/audio/kick-preview.mp3"
+                      data-label="Kick preview" aria-label="Play Kick preview" aria-pressed="false">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="waveform" data-bars="16" aria-hidden="true"></div>
+            </div>
+            <span class="capsule-status" aria-live="polite"></span>
+          </article>
+
+          <article class="capsule glass-card tilt reveal" data-audio-scope>
+            <h3>Bassline</h3>
+            <p>Rolling, squelching acid lines that twist through dimensions.</p>
+            <div class="capsule-controls">
+              <button class="play-btn" type="button" data-gated aria-disabled="true"
+                      data-audio-id="capsule-bass" data-audio-src="./assets/audio/bass-preview.mp3"
+                      data-label="Bassline preview" aria-label="Play Bassline preview" aria-pressed="false">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="waveform" data-bars="16" aria-hidden="true"></div>
+            </div>
+            <span class="capsule-status" aria-live="polite"></span>
+          </article>
+
+          <article class="capsule glass-card tilt reveal" data-audio-scope>
+            <h3>Acid Textures</h3>
+            <p>Psychedelic layers, resonant sweeps and otherworldly atmospheres.</p>
+            <div class="capsule-controls">
+              <button class="play-btn" type="button" data-gated aria-disabled="true"
+                      data-audio-id="capsule-acid" data-audio-src="./assets/audio/acid-preview.mp3"
+                      data-label="Acid Textures preview" aria-label="Play Acid Textures preview" aria-pressed="false">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="waveform" data-bars="16" aria-hidden="true"></div>
+            </div>
+            <span class="capsule-status" aria-live="polite"></span>
+          </article>
+
+          <article class="capsule glass-card tilt reveal" data-audio-scope>
+            <h3>Atmosphere</h3>
+            <p>Vast cosmic pads that stretch across infinite desert skies.</p>
+            <div class="capsule-controls">
+              <button class="play-btn" type="button" data-gated aria-disabled="true"
+                      data-audio-id="capsule-atmo" data-audio-src="./assets/audio/atmo-preview.mp3"
+                      data-label="Atmosphere preview" aria-label="Play Atmosphere preview" aria-pressed="false">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="waveform" data-bars="16" aria-hidden="true"></div>
+            </div>
+            <span class="capsule-status" aria-live="polite"></span>
+          </article>
+
+          <article class="capsule glass-card tilt reveal" data-audio-scope>
+            <h3>Full Preview</h3>
+            <p>A glimpse into the complete DuneSurfer experience.</p>
+            <div class="capsule-controls">
+              <button class="play-btn" type="button" data-gated aria-disabled="true"
+                      data-audio-id="capsule-full" data-audio-src="./assets/audio/full-preview.mp3"
+                      data-label="Full preview" aria-label="Play Full preview" aria-pressed="false">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="waveform" data-bars="16" aria-hidden="true"></div>
+            </div>
+            <span class="capsule-status" aria-live="polite"></span>
+          </article>
+        </div>
+
+        <p class="sound-hint reveal">Click "Enter The Vortex" at the top to activate the previews. Nothing plays automatically.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="identity-heading" style="background: var(--color-abyss); border-block: 1px solid var(--color-line);">
+      <div class="container">
+        <span class="section-kicker reveal">Identity</span>
+        <h2 id="identity-heading" class="section-title reveal">Born From Many Dimensions.<br>Forged As One Sound.</h2>
+
+        <div class="identity-grid">
+          <article class="identity-card glass-card tilt reveal">
+            <div class="symbol" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 4L4 44h40L24 4zM24 14l12 24H12L24 14z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Desert Frequencies</h3>
+            <p>Ancient dune vibrations channelled through modern synthesis.</p>
+          </article>
+
+          <article class="identity-card glass-card tilt reveal">
+            <div class="symbol" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="5"/><circle cx="24" cy="24" r="12"/><circle cx="24" cy="24" r="19"/><path d="M24 5v38M5 24h38" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Cosmic Bass</h3>
+            <p>Deep gravitational low-end that pulls you into the void.</p>
+          </article>
+
+          <article class="identity-card glass-card tilt reveal">
+            <div class="symbol" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 24c4-8 8-16 12-8s8 16 12 8 8-16 12-8 4 8 4 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Psychedelic Textures</h3>
+            <p>Fractalized sound layers that shift and breathe with consciousness.</p>
+          </article>
+
+          <article class="identity-card glass-card tilt reveal">
+            <div class="symbol" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="10" cy="38" r="4"/><circle cx="24" cy="38" r="4"/><circle cx="38" cy="38" r="4"/><path d="M10 34V14M24 34V8M38 34V18" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Tribal Rhythms</h3>
+            <p>Primal percussion patterns that connect body to earth.</p>
+          </article>
+
+          <article class="identity-card glass-card tilt reveal">
+            <div class="symbol" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M10 6v36M24 6v36M38 6v36" stroke-linecap="round"/><circle cx="10" cy="30" r="4"/><circle cx="24" cy="16" r="4"/><circle cx="38" cy="24" r="4"/></svg>
+            </div>
+            <h3>Astral Production</h3>
+            <p>Precision sound design, layered synthesis and otherworldly mastering.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="featured-heading">
+      <div class="container">
+        <span class="section-kicker reveal">Now playing</span>
+        <h2 id="featured-heading" class="section-title reveal">Featured Release</h2>
+
+        <div class="featured-wrap">
+          <div class="cover-frame tilt reveal">
+            <img src="./assets/images/release-placeholder.jpg" alt="Featured release cover art" onerror="this.onerror=null;this.src='./assets/images/release-placeholder.jpg';">
+          </div>
+          <div class="featured-panel reveal">
+            <span class="release-date">Coming Soon</span>
+            <h3>First Transmission</h3>
+            <p class="desc">The debut DuneSurfer release. Desert mysticism channelled through psytrance frequencies. Hypnotic basslines, cosmic atmospheres and relentless energy.</p>
+
+            <div class="platform-row featured-platforms">
+              <span class="platform-btn disabled" aria-disabled="true">
+                <img src="./assets/icons/spotify.svg" alt="" aria-hidden="true">Spotify
+              </span>
+              <span class="platform-btn disabled" aria-disabled="true">
+                <img src="./assets/icons/apple-music.svg" alt="" aria-hidden="true">Apple Music
+              </span>
+              <span class="platform-btn disabled" aria-disabled="true">
+                <img src="./assets/icons/youtube.svg" alt="" aria-hidden="true">YouTube
+              </span>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 1.2rem;">
+              <a class="btn btn-secondary" href="./music.html">All Releases</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement" aria-labelledby="statement-heading">
+      <div class="container">
+        <h2 id="statement-heading" class="reveal">Surfing Desert Mysticism.<br>Meeting Cosmic Frequencies.</h2>
+        <hr class="glow-divider">
+        <p class="reveal">DuneSurfer is creating psytrance that transcends. Sound born from desert silence and cosmic chaos, designed for the dancefloor and the mind. Not following a formula. Channelling a frequency.</p>
+      </div>
+    </section>
+
+    <section class="cta-final" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading" class="reveal">Enter The Frequency.</h2>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="./music.html">Explore The Sound</a>
+          <a class="btn btn-secondary" href="./contact.html">Contact DuneSurfer</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-wave" aria-hidden="true"></div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/images/dunesurfer-mark.png" alt="">
+          <div>
+            <h2>DuneSurfer</h2>
+            <p>Desert Mysticism. Cosmic Frequencies.<br>Psytrance built for transcendence.</p>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer navigation">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./music.html">Music</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./epk.html">EPK</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3>Follow</h3>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener">SoundCloud</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Spotify</a></li>
+            <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-platforms" aria-label="Music platforms">
+        <a class="icon-link" href="#" aria-label="DuneSurfer on Spotify"><img src="./assets/icons/spotify.svg" alt="" aria-hidden="true"></a>
+        <a class="icon-link" href="#" aria-label="DuneSurfer on Apple Music"><img src="./assets/icons/apple-music.svg" alt="" aria-hidden="true"></a>
+        <a class="icon-link" href="#" aria-label="DuneSurfer on YouTube"><img src="./assets/icons/youtube.svg" alt="" aria-hidden="true"></a>
+        <a class="icon-link" href="#" aria-label="DuneSurfer on SoundCloud"><img src="./assets/icons/soundcloud.svg" alt="" aria-hidden="true"></a>
+      </div>
+
+      <p class="footer-genre">Psytrance</p>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year">2026</span> DuneSurfer. All rights reserved.</span>
+        <span>Desert Mysticism. Cosmic Frequencies.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/audio.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/portal.js" defer></script>
 </body>
 </html>
