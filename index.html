@@ -101,11 +101,12 @@
           </div>
         </div>
 
-        <div class="portal-stage hero-stagger" data-parallax="0.15" style="--stagger: 2.5s">
+        <div class="portal-stage hero-stagger" data-parallax="0.15" style="--stagger: 2.5s; cursor: pointer;">
           <div id="sound-portal" aria-hidden="true"></div>
           <div class="portal-fallback">
             <img class="fallback-mark" src="https://d8j0ntlcm91z4.cloudfront.net/user_39LyNd3yWOiGeUhnS3CdfDw25su/hf_20260711_163904_c5048141-7de4-4a8f-ac16-8fab37a56e08_min.webp" alt="DuneSurfer DS monogram">
           </div>
+          <audio id="portal-audio" src="./assets/audio/portal-preview.mp3" loop preload="auto"></audio>
         </div>
       </div>
 
@@ -372,5 +373,47 @@
   <script src="./js/main.js"></script>
   <script src="./js/portal.js" defer></script>
   <script src="./js/interactions.js" defer></script>
+  <script>
+  (function() {
+    var stage = document.querySelector('.portal-stage');
+    var audio = document.getElementById('portal-audio');
+    if (!stage || !audio) return;
+
+    var fadeIn = null, fadeOut = null;
+    var maxVol = 0.6;
+    var step = 0.02;
+    var interval = 30;
+
+    stage.addEventListener('mouseenter', function() {
+      clearInterval(fadeOut);
+      audio.volume = 0;
+      audio.play().then(function() {
+        if (window.DSPortal) DSPortal.setSoundActive(true);
+        fadeIn = setInterval(function() {
+          if (audio.volume < maxVol - step) {
+            audio.volume = Math.min(audio.volume + step, maxVol);
+          } else {
+            audio.volume = maxVol;
+            clearInterval(fadeIn);
+          }
+        }, interval);
+      }).catch(function() {});
+    });
+
+    stage.addEventListener('mouseleave', function() {
+      clearInterval(fadeIn);
+      fadeOut = setInterval(function() {
+        if (audio.volume > step) {
+          audio.volume = Math.max(audio.volume - step, 0);
+        } else {
+          audio.volume = 0;
+          audio.pause();
+          if (window.DSPortal) DSPortal.setSoundActive(false);
+          clearInterval(fadeOut);
+        }
+      }, interval);
+    });
+  })();
+  </script>
 </body>
 </html>
