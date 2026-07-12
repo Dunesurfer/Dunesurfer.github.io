@@ -374,7 +374,7 @@
             if (note) { note.textContent = 'Transmission received! DuneSurfer will respond.'; note.style.color = 'var(--color-cyan)'; }
             form.reset();
           } else {
-            if (note) { note.textContent = 'Something went wrong. Please try again.'; note.style.color = 'var(--color-magenta)'; }
+            if (note) { note.textContent = (data.message || 'Something went wrong.') + ' Please try again.'; note.style.color = 'var(--color-magenta)'; }
           }
         })
         .catch(function () {
